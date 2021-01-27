@@ -1,0 +1,27 @@
+<p>
+  <strong>Time of day:</strong>
+  <%= @entry.time_of_day %>
+</p>
+
+<p>
+  <strong>Steps:</strong>
+  <%= @entry.steps %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @entry.time %>
+</p>
+
+<p>
+  <strong>Miles:</strong>
+  <%= @entry.miles %>
+</p>
+
+<p>
+  <strong>Calories:</strong>
+  <%= @entry.calories %>
+</p>
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>

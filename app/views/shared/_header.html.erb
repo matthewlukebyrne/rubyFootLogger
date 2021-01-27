@@ -1,0 +1,44 @@
+<section class="hero is-danger is-small">
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
+          </a>
+          <span class="navbar-burger" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroA" class="navbar-menu">
+          <div class="navbar-end">
+            <span class="navbar-item">
+              <!-- link_to with passing the path of the rails route and then the class you can append to - convention driven -->
+              <%= link_to "Create New", new_entry_path, class: "button is-success" %>
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        <!-- if statement dynamically to show day else default title -->
+        <% if content_for(:title) %>
+          <%= yield :title %>
+        <% else %>
+          Ruby Rails FootLogger
+        <% end %>
+      </h1>
+      <h2 class="subtitle">
+        This is a sample Rails application used to tally footsteps!
+      </h2>
+    </div>
+  </div>
+</section>
