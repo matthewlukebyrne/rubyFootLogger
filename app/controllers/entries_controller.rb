@@ -1,4 +1,5 @@
 class EntriesController < ApplicationController
+  # acts a callback function to trigger and find show edit update and destroy
   before_action :set_entry, only: %i[ show edit update destroy ]
 
   # GET /entries or /entries.json

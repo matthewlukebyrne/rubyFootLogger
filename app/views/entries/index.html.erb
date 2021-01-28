@@ -1,6 +1,6 @@
 <!-- Dynamically render date and time -->
 <% content_for :title do %>
-  Step Logger &ndash; <%= DateTime.now %>
+  Step Logger &ndash; <%= DateTime.now.to_s(:nice_date) %>
     <% end %>
 
       <div class="columns mt-6 is-centered">
