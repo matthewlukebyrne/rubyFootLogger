@@ -1,0 +1,57 @@
+<div class="columns is-centered mt-6">
+  <div class="column is-half">
+    <!-- Looping through all the days entries  -->
+    <% @entries.each do |day, entries| %>
+      <h3 class="is-size-4 has-text-weight-bold mb-4 has-text-centered">Entries for <%= day %></h3>
+
+      <!-- Plucks out total values and renders to the page -->
+      <nav class="level is-mobile">
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">Steps</p>
+            <p class="title"><%= entries.pluck(:steps).sum %></p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">Time</p>
+            <p class="title"><%= entries.pluck(:time).sum %></p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">Miles</p>
+            <p class="title"><%= entries.pluck(:miles).sum %></p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">Calories</p>
+            <p class="title"><%= entries.pluck(:calories).sum %></p>
+          </div>
+        </div>
+      </nav>
+
+      <br>
+
+        <!-- Sub array lopping through -->
+      <% entries.each do |entry| %>
+          <%= link_to entry_path(entry) do %>
+            <div class="card">
+                <div class="card-content">
+                    <strong><%= entry.time_of_day %></strong><br/>
+                    <%= entry.steps %> steps,
+                    <%= entry.time %> completed time,
+                    <%= entry.miles %> miles, 
+                    <%= entry.calories %> calories
+                  </div>
+              </div>
+            <% end %>
+        <% end%>
+    <% end %>
+
+    <br/>
+    <%= link_to 'Back' , entries_path %>
+
+  </div>
+</div>

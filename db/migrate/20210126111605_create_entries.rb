@@ -7,7 +7,7 @@ class CreateEntries < ActiveRecord::Migration[6.1]
       t.integer :miles
       t.integer :calories
 
-      t.timestamps # created_at & updated_at
+      t.timestamps # created_at column & updated_at column
     end
   end
 end

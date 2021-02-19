@@ -1,15 +1,24 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  time_of_day: MyString
-  steps: 1
-  time: 
-  miles: 1
-  calories: 1
 
-two:
-  time_of_day: MyString
-  steps: 1
-  time: 
-  miles: 1
-  calories: 1
+# Fixtures - a way to mock your data using a yml file
+# Mock data with breakfast and lunch entries
+
+breakfast:
+  time_of_day: "Breakfast"
+  steps: 1000
+  time: 1000
+  miles: 5
+  calories: 150
+
+lunch:
+  time_of_day: "Lunch"
+  steps: 2500
+  time: 1500
+  miles: 10
+  calories: 300
+
+
+
+
+

@@ -3,8 +3,9 @@ class EntriesController < ApplicationController
   before_action :set_entry, only: %i[ show edit update destroy ]
 
   # GET /entries or /entries.json
+  # Get the entries for specifically today using "where"
   def index
-    @entries = Entry.all
+    @entries = Entry.where("created_at >= ?", Date.today)
   end
 
   # GET /entries/1 or /entries/1.json
